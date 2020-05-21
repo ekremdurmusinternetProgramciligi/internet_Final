@@ -15,7 +15,7 @@
 <table bgcolor="#C5FFF0" border="1" width="100%" height="75px">
       <tr>
          <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
-         <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
+         <td width="25%">Kayıt Ol</td>
          <td width="25%">Anketler</td>
          <td width="25%">Anket Oluştur</td>
       </tr>     
@@ -25,19 +25,19 @@
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C">
       <tr>
          <td>Kullanıcı Adı:</td>
-         <td><input type="text" id="loginuser" name="kullanicigiris"></input></td>
-      </tr>
-      
-      <tr>
-         
+         <td><input type="text" id="signupuser" name="userkayit"></input></td>
+      </tr>      
+      <tr>         
          <td>Şifre:</td>
-         <td><input type="text" id="loginpass" name="sifregiris"></input></td>
-         
+         <td><input type="text" id="signpass" name="sifrekayit"></input></td>         
       </tr> 
       
-      <tr>
-        
-         <td><button type="button">Giriş Yap</button></td>
+      <tr>         
+         <td>Şifreyi Tekrar Girin:</td>
+         <td><input type="text" id="signpass" name="sifrekayit"></input></td>         
+      </tr>       
+      <tr>        
+         <td><button type="button">Kayıt Ol</button></td>
       </tr>      
 </table>
 
