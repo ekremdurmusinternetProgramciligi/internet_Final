@@ -12,7 +12,7 @@
 </head>
 <body bgcolor="#E8EEE9">
 	
-<table bgcolor="#C5FFF0" border="1" width="100%" height="75px">
+<table bgcolor="#C5FFF0" border="3" width="100%" height="75px">
       <tr>
          <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
          <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
