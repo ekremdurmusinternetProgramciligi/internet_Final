@@ -17,7 +17,7 @@
          <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
          <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
          <td width="25%">Anketler</td>
-         <td width="25%">Anket Oluştur</td>
+         <td width="25%"><a href="anketolustur.jsp">Anket Oluştur</a></td>
       </tr>     
 </table>
 
