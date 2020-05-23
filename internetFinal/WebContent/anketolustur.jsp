@@ -42,8 +42,14 @@
       </tr>     
 </table>
 
+<form name="anketkayit" id="anketkayit" action="Servlet" accept-charset="UTF-8" 
+								method="post" onsubmit="">
 
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C" align="center">
+      <tr>
+         <td>Anket adi gir:</td>
+         <td><input type="text" id="adi" name="adi"></input></td>
+      </tr> 
       <tr>
          <td>Soruyu gir:</td>
          <td><input type="text" id="soru" name="soru1"></input></td>
@@ -73,7 +79,7 @@
          <td><input type="submit" id="ankOlustur" name="ankOlustur" value="Oluştur" onclick="olmuyore();"></td>
       </tr>      
 </table>
-
+</form>
 
 </body>
 </html>

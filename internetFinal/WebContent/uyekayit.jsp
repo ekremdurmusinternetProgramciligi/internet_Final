@@ -22,25 +22,35 @@
 </table>
 
 
+
+<form method="post" action="loginRegister">
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C">
+	<tr>
+         <td>${basariliMessage}</td>
+         
+      </tr>
       <tr>
          <td>Kullanıcı Adı:</td>
-         <td><input type="text" id="signupuser" name="userkayit"></input></td>
+         <td><input type="text" id="uname" name="username"></input></td>
       </tr>      
       <tr>         
          <td>Şifre:</td>
-         <td><input type="text" id="signpass" name="sifrekayit"></input></td>         
+         <td><input type="text" id="upassword" name="password1"></input></td>         
       </tr> 
-      
       <tr>         
          <td>Şifreyi Tekrar Girin:</td>
-         <td><input type="text" id="signpass" name="sifrekayit"></input></td>         
-      </tr>       
+         <td><input type="text" id="upassword" name="password2"></input></td>         
+      </tr> 
+      <tr>         
+         <td>Eposta Girin:</td>
+         <td><input type="text" id="upassword" name="uposta"></input></td>         
+      </tr> 
+            
       <tr>        
-         <td><button type="button">Kayıt Ol</button></td>
+         <td><button type="submit" value="register">Kayıt Ol</button></td>
       </tr>      
 </table>
-
+</form>
 
 </body>
 </html>

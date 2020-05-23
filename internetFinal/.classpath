@@ -13,5 +13,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jre1.8.0_251/lib/ext/mssql-jdbc-8.2.0.jre8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

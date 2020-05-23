@@ -21,26 +21,30 @@
       </tr>     
 </table>
 
-
+<form method="post" action="loginRegister">
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C">
+	<tr>
+         <td>${message}</td>
+      
+      </tr>
       <tr>
          <td>Kullanıcı Adı:</td>
-         <td><input type="text" id="loginuser" name="kullanicigiris"></input></td>
+         <td><input type="text" id="loginuser" name="username"></input></td>
       </tr>
       
       <tr>
          
          <td>Şifre:</td>
-         <td><input type="text" id="loginpass" name="sifregiris"></input></td>
+         <td><input type="text" id="loginpass" name="password1"></input></td>
          
       </tr> 
       
       <tr>
         
-         <td><button type="button">Giriş Yap</button></td>
+         <td><button type="submit" value='login'>Giriş Yap</button></td>
       </tr>      
 </table>
-
+</form>
 
 </body>
 </html>
