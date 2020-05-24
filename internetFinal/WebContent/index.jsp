@@ -41,7 +41,7 @@
       
       <tr>
         
-         <td><button type="submit" value='login'>Giriş Yap</button></td>
+         <td><button type="submit" name="login" value='login'>Giriş Yap</button></td>
       </tr>      
 </table>
 </form>

@@ -37,19 +37,24 @@ public class LoginRegister extends HttpServlet {
 		String password = request.getParameter("password1");
 		String ePosta = request.getParameter("uposta");
 		String submitType = request.getParameter("submit");
+		
 		UYE c = new UYE(kAdi,sifre,eposta);
 		c = cd.getUye(kAdi, sifre, eposta);
+	 
+		
 		System.out.println(c.getKadi() + c.getSifre() + c.getEposta());
 		System.out.println(userName + password + ePosta);
-		
-		
-		
-		if(submitType.equals("login"))// index sayfasýnda $message yerine yazý yazdýrýyor giriþ yaparsa if içinde çalýþmýyor !
+		String kontrollogin = request.getParameter("login");
+		String kontrolkayit = request.getParameter("register");
+		System.out.println(kontrollogin);
+		System.out.println(c);
+		if(kontrollogin !=null  && c!=null && c.getKadi()!= null)// index sayfasýnda $message yerine yazý yazdýrýyor giriþ yaparsa if içinde çalýþmýyor !
 		{
 			System.out.println("Giriþ Yapýldý");
 			request.setAttribute("message", c.getKadi());
+			request.getRequestDispatcher("anketolustur.jsp").forward(request, response);
 		}
-		else if(submitType.equals("register")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		else if(kontrolkayit != null) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
 		{
 			c=new UYE(userName, password, ePosta);
 			c.setKadi(userName);
@@ -63,7 +68,7 @@ public class LoginRegister extends HttpServlet {
 		else
 		{
 			request.setAttribute("message", "Kullanýcý bulunamadý, üye olun.");
-			
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
 		

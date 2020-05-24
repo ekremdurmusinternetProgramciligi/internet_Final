@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 public class uyeDAOImp implements uyeDAO {
 
 	static Connection con;
@@ -33,6 +34,7 @@ public class uyeDAOImp implements uyeDAO {
 	@Override
 	public UYE getUye(String kAdi, String sifre, String eposta) {
 
+	
 		UYE uy = new UYE(kAdi, sifre, eposta);
 
 		try {
@@ -40,10 +42,12 @@ public class uyeDAOImp implements uyeDAO {
 			ps = con.prepareStatement("select * from uyeler where kAdi=? and sifre=?");
 			ps.setString(1, kAdi);
 			ps.setString(2, sifre);
-			
+		//	ps.setString(3, eposta);
+			System.out.println("try1deyim");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
+				System.out.println("try2deyim");
 				uy.setKadi(rs.getString(1));
 				uy.setSifre(rs.getString(2));
 				uy.setEposta(rs.getString(3));

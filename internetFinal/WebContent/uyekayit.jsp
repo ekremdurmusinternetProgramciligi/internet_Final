@@ -47,7 +47,7 @@
       </tr> 
             
       <tr>        
-         <td><button type="submit" value="register">Kayıt Ol</button></td>
+         <td><button type="submit" name="register" value="register">Kayıt Ol</button></td>
       </tr>      
 </table>
 </form>
