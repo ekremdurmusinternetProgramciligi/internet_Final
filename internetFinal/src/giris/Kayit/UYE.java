@@ -10,12 +10,12 @@ public class UYE {
 	private String eposta;
 	
 	
-	public UYE(String kadi,String sifre,String eposta){
-		this.kadi = kadi;
-		this.sifre = sifre;
-		this.eposta = eposta;
-	}
-	
+	//public UYE(String kadi,String sifre,String eposta){
+	//	this.kadi = kadi;
+	//	this.sifre = sifre;
+	//	this.eposta = eposta;
+	//}
+ 
 	public UYE(HttpServletRequest request) {
 		this.kadi = request.getParameter("username");
 		this.sifre = request.getParameter("password1");
@@ -23,7 +23,11 @@ public class UYE {
 		
 	}
 	
-	
+
+	public UYE() {
+		
+	}
+
 
 	public String getKadi() {
 		return kadi;

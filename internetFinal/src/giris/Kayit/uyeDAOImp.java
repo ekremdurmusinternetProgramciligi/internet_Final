@@ -10,6 +10,7 @@ public class uyeDAOImp implements uyeDAO {
 	static Connection con;
 	static PreparedStatement ps;
 	
+	
 	@Override
 	public int insertUYE(UYE u) {
 			
@@ -32,18 +33,19 @@ public class uyeDAOImp implements uyeDAO {
 	}
 
 	@Override
-	public UYE getUye(String kAdi, String sifre, String eposta) {
+	public UYE getUye(String userName, String password, String ePosta) {
 
-	
-		UYE uy = new UYE(kAdi, sifre, eposta);
-
+		
+		UYE uy = new UYE();
+		
 		try {
 			con = connProvider.getCon();
-			ps = con.prepareStatement("select * from uyeler where kAdi=? and sifre=?");
-			ps.setString(1, kAdi);
-			ps.setString(2, sifre);
-		//	ps.setString(3, eposta);
+			ps = con.prepareStatement("select * from uyeler where kullaniciadi=? and sifre=?");
+			ps.setString(1, userName);
+			ps.setString(2, password);
+		//	ps.setString(3, ePosta);
 			System.out.println("try1deyim");
+			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{

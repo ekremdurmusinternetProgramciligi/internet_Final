@@ -13,16 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "loginRegister", urlPatterns = { "/loginRegister" })
 public class LoginRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String sifre;
-	private String eposta;
-	private String kAdi;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public LoginRegister() {
-        super();
-        // TODO Auto-generated constructor stub
+      
     }
 
 	/**
@@ -38,38 +35,35 @@ public class LoginRegister extends HttpServlet {
 		String ePosta = request.getParameter("uposta");
 		String submitType = request.getParameter("submit");
 		
-		UYE c = new UYE(kAdi,sifre,eposta);
-		c = cd.getUye(kAdi, sifre, eposta);
+		UYE c = new UYE();
+		c = cd.getUye(userName, password, ePosta);
 	 
 		
-		System.out.println(c.getKadi() + c.getSifre() + c.getEposta());
-		System.out.println(userName + password + ePosta);
-		String kontrollogin = request.getParameter("login");
-		String kontrolkayit = request.getParameter("register");
-		System.out.println(kontrollogin);
-		System.out.println(c);
-		if(kontrollogin !=null  && c!=null && c.getKadi()!= null)// index sayfasýnda $message yerine yazý yazdýrýyor giriþ yaparsa if içinde çalýþmýyor !
+		//System.out.println(c.getKadi() + c.getSifre() + c.getEposta());
+		if(submitType.equals("login") && c!=null && c.getKadi()!= null)// index sayfasýnda $message yerine yazý yazdýrýyor giriþ yaparsa if içinde çalýþmýyor !
 		{
 			System.out.println("Giriþ Yapýldý");
 			request.setAttribute("message", c.getKadi());
-			request.getRequestDispatcher("anketolustur.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
-		else if(kontrolkayit != null) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		else if(submitType.equals("register")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
 		{
-			c=new UYE(userName, password, ePosta);
+			c=new UYE();
 			c.setKadi(userName);
 			c.setSifre(password);
 			c.setEposta(ePosta);
 			cd.insertUYE(c);
 			System.out.println("Kayýt baþarýlý");
-			request.setAttribute("basariliMessage", "Üyelik Tamamlandý, Giriþ Yapabilirsiniz");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.setAttribute("message", "Üyelik Tamamlandý, Giriþ Yapabilirsiniz");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 		else
 		{
 			request.setAttribute("message", "Kullanýcý bulunamadý, üye olun.");
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
+		
+		
 		
 		
 		
