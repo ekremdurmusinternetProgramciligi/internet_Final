@@ -44,7 +44,7 @@ public class LoginRegister extends HttpServlet {
 		{
 			System.out.println("Giriþ Yapýldý");
 			request.setAttribute("message", c.getKadi());
-			request.getRequestDispatcher("index.jsp").forward(request, response);
+			request.getRequestDispatcher("anketler.jsp").forward(request, response);
 		}
 		else if(submitType.equals("register")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
 		{

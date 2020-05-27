@@ -4,13 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Anketçi</title>
 </head>
 <body>
 
 <form action="loginRegister"  method="post">
 
-<table style="background-color: yellow;">
+<table bgcolor="#C5FFF0" border="3" width="100%" height="75px">
+      <tr>
+         <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
+         <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
+         <td width="25%">Anketler</td>
+         <td width="25%"><a href="anketolustur.jsp">Anket Oluştur</a></td>
+      </tr>     
+</table>
+
+<table style="background-color: #EAEF8C;">
 	<tr>
 		<td><h3 style="color:red;">${message}</h3>
 		<h3 style="color:green;">${successMessage}</h3>

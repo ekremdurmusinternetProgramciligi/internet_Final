@@ -43,7 +43,7 @@
       </tr> 
       <tr>         
          <td>Eposta Girin:</td>
-         <td><input type="text" id="upassword" name="uposta"></input></td>         
+         <td><input type="text" id="uposta" name="uposta"></input></td>         
       </tr> 
             
       <tr>        
