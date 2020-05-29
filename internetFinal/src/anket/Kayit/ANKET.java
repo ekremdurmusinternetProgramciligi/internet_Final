@@ -4,11 +4,15 @@ import javax.servlet.http.HttpServletRequest;
 
 public class ANKET {
 
-	private String anketadi;
+	private String anketID,userID;
+	private String anketadi,anket1,anket2,anket3,anket4,anket5;
 	private String soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10;
+	
 	
 	private String cevaplar1b,cevaplar2b,cevaplar3b,cevaplar4b,cevaplar5b,cevaplar6b,
 	cevaplar7b,cevaplar8b,cevaplar9b,cevaplar10b;	
+	
+	
 
 	public ANKET()
 	{
@@ -16,6 +20,14 @@ public class ANKET {
 	}
 	
 	public ANKET(HttpServletRequest request) {
+		this.setAnket1(request.getParameter("anket1"));
+		this.setAnket2(request.getParameter("anket2"));
+		this.setAnket3(request.getParameter("anket3"));
+		this.setAnket4(request.getParameter("anket4"));
+		this.setAnket5(request.getParameter("anket5"));
+		
+		this.setUserID(request.getParameter("userID"));
+		
 		this.anketadi = request.getParameter("anketadi");
 		this.soru1 = request.getParameter("soru1");this.soru2 = request.getParameter("soru1");
 		this.soru3 = request.getParameter("soru1");this.soru4 = request.getParameter("soru1");
@@ -202,6 +214,62 @@ public class ANKET {
 
 	public void setCevaplar10b(String cevaplar10b) {
 		this.cevaplar10b = cevaplar10b;
+	}
+
+	public String getAnket1() {
+		return anket1;
+	}
+
+	public void setAnket1(String anket1) {
+		this.anket1 = anket1;
+	}
+
+	public String getAnket5() {
+		return anket5;
+	}
+
+	public void setAnket5(String anket5) {
+		this.anket5 = anket5;
+	}
+
+	public String getAnket2() {
+		return anket2;
+	}
+
+	public void setAnket2(String anket2) {
+		this.anket2 = anket2;
+	}
+
+	public String getAnket3() {
+		return anket3;
+	}
+
+	public void setAnket3(String anket3) {
+		this.anket3 = anket3;
+	}
+
+	public String getAnket4() {
+		return anket4;
+	}
+
+	public void setAnket4(String anket4) {
+		this.anket4 = anket4;
+	}
+
+	public String getAnketID() {
+		return anketID;
+	}
+
+	public void setAnketID(String anketID) {
+		this.anketID = anketID;
+	}
+
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
 	}
 
 	

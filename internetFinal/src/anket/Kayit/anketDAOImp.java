@@ -46,34 +46,158 @@ public class anketDAOImp implements anketDAO {
 	        }
 	        return durum;
 	}
+	
+	@Override
+	public int kinsertANKET(ANKET a) {
+		  int durum=0;
+		  
+		  
+		  //,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+	        try {
+	            con=connProvider.getCon();
+	            ps=con.prepareStatement("insert into cevapliAnketler (anketID,userID,soru1,kcevap1,soru2,kcevap2,soru3,kcevap3,soru4,kcevap4,soru5,kcevap5,soru6,kcevap6,soru7,kcevap7,soru8,kcevap8,soru9,kcevap9,soru10,kcevap10) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	            ps.setString(1, a.getAnketID());
+	            ps.setString(2, a.getUserID());
+	            ps.setString(3, a.getSoru1());ps.setString(4, a.getCevaplar1b());
+	            ps.setString(5, a.getSoru2());ps.setString(6, a.getCevaplar2b());
+	            ps.setString(7, a.getSoru3());ps.setString(8, a.getCevaplar3b());
+	            ps.setString(9, a.getSoru4());ps.setString(10, a.getCevaplar4b());
+	            ps.setString(11, a.getSoru5());ps.setString(12, a.getCevaplar5b());
+	            ps.setString(13, a.getSoru6());ps.setString(14, a.getCevaplar6b());
+	            ps.setString(15, a.getSoru7());ps.setString(16, a.getCevaplar7b());
+	            ps.setString(17, a.getSoru8());	ps.setString(18, a.getCevaplar8b());
+	            ps.setString(19, a.getSoru9());ps.setString(20, a.getCevaplar9b());
+	            ps.setString(21, a.getSoru10());ps.setString(22, a.getCevaplar10b());
+	      
+	            
+	            durum = ps.executeUpdate();
+	            con.close();
+	            
+	            System.out.println("kullancý anket giriyotr1");
+
+	        }
+	        catch(Exception e) {
+	        	System.out.println("kullancý anket giriyor catch " +e);
+	            
+	        }
+	        return durum;
+	}
 
 	@Override
-	public ANKET getAnket(String anketAdi, String soru1,String soru2,String soru3,String soru4,
+	public ANKET getAnket(String anketAdi,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
 			String soru5,String soru6,String soru7,String soru8,String soru9,String soru10,
 			String cevaplar1b,String cevaplar2b,String cevaplar3b,String cevaplar4b,String cevaplar5b,
 			String cevaplar6b,String cevaplar7b,String cevaplar8b,String cevaplar9b,String cevaplar10b) {
 		
 		 ANKET an = new ANKET();
 
+		 //SELECT *	FROM products WHERE category_id IS NOT NULL;
+		 
 	        try {
 	            con = connProvider.getCon();
-	            ps = con.prepareStatement("select * from kayitliAnketler where anketadi=?");
-	            ps.setString(1, anketAdi);
-	            System.out.println("getAnket try1deyim");
-
+	            ps = con.prepareStatement("select anketAdi from kayitliAnketler");
+	         
 	            ResultSet rs = ps.executeQuery();
-	            while(rs.next())
-	            {
-	                System.out.println("try2deyim");
-	                an.setAnketadi(rs.getString(1));
-	               
-	            }
-	        }
+	            
+	          
+	            System.out.println("anketDAOImp:"+ an.getAnket1());
+	            System.out.println("getAnket try1deyim");
+	            System.out.println("anketDAOImp:"+ anket1);
+	           
+	            
+	            if(!rs.next())
+    			{
+        			an.setAnket1("Boþ anket");
+    			}
+    			else
+    			{
+    				an.setAnket1(rs.getString(1));
+    			}
+			
+    			if(!rs.next())
+    			{
+        			an.setAnket2("Boþ anket");
+    			}
+    			else
+    			{
+    				an.setAnket2(rs.getString(1));	
+    			}
+    			
+    			if(!rs.next())
+    			{
+        			an.setAnket3("Boþ anket");
+    			}
+    			else
+    			{
+    				an.setAnket3(rs.getString(1));
+    			}
+    			
+    			if(!rs.next())
+    			{
+        			an.setAnket4("Boþ anket");
+    			}
+    			else
+    			{
+    				an.setAnket4(rs.getString(1));	
+    			}
+    			
+    			if(!rs.next())
+    			{
+        			an.setAnket5("Boþ anket");
+    			}
+    			else
+    			{
+    				an.setAnket5(rs.getString(1));
+    			}
+    			
+	}
 	        catch(Exception e) {
 	            System.out.println(e);
 	        }
 
 	        return an;
-	    }
+	        
 	}
+	
+	@Override
+	public ANKET getAnketSC(String anketAdi,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
+			String soru5,String soru6,String soru7,String soru8,String soru9,String soru10,
+			String cevaplar1b,String cevaplar2b,String cevaplar3b,String cevaplar4b,String cevaplar5b,
+			String cevaplar6b,String cevaplar7b,String cevaplar8b,String cevaplar9b,String cevaplar10b) {
+		
+		 ANKET an = new ANKET();
+
+		 //SELECT *	FROM products WHERE category_id IS NOT NULL;
+		 
+		 
+	        try {
+	            con = connProvider.getCon();
+	            ps = con.prepareStatement("select * from kayitliAnketler");
+	         
+	            ResultSet rs = ps.executeQuery();
+      
+	            rs.next();
+	            	an.setAnketadi(rs.getString(2));            
+	            	an.setSoru1(rs.getString(3));         
+	            	an.setCevaplar1b(rs.getString(4));
+	            	
+	            	
+	            	
+	            System.out.println("anketDAOImp soruçekmedeyim");
+    				
+	            System.out.println("anketDAOImp soruçektim :"+ an.getSoru1());
+	            System.out.println("anketDAOImp cevapçektim :"+ an.getCevaplar1b());
+	           
+			
+    			
+    	
+	}
+	        catch(Exception e) {
+	            System.out.println(e);
+	        }
+
+	        return an;
+	        
+	}
+}
 
