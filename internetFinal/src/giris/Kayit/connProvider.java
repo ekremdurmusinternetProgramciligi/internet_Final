@@ -12,8 +12,8 @@ public class connProvider implements myProvider {
 	public static Connection getCon()
 	{
 		String connURL="jdbc:sqlserver://localhost:1433;databaseName=anketSite;";
-		String username="test1";
-		String password="123456789";
+		String username="test2";
+		String password="123123";
 		
 	
 		

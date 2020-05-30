@@ -97,6 +97,7 @@ anketDAO cd = new anketDAOImp();
 			request.setAttribute("anket3", c.getAnket3());
 			request.setAttribute("anket4", c.getAnket4());
 			request.setAttribute("anket5", c.getAnket5());
+			request.setAttribute("AnketID1", c.getAnketID1());
 			request.getRequestDispatcher("anketler.jsp").forward(request, response);
 		}
 		else if(submitType.equals("anketKayit")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
@@ -124,19 +125,126 @@ anketDAO cd = new anketDAOImp();
 			System.out.println("Anket Sayfasý Yenilendi !");
 			System.out.println("anket servlet anket adi"+sc.getAnketadi());
 			
-			String[] acevaplar = sc.getCevaplar1b().split(";");
-        	String soru1c1 = acevaplar[0];
-        	String soru1c2 = acevaplar[1];
-        	String soru1c3 = acevaplar[2];
-        	String soru1c4 = acevaplar[3];
-
+			String[] acevaplar1 = sc.getCevaplar1b().split(";");
+        	String soru1c1 = acevaplar1[0];
+        	String soru1c2 = acevaplar1[1];
+        	String soru1c3 = acevaplar1[2];
+        	String soru1c4 = acevaplar1[3];
+        	
+        	String[] acevaplar2 = sc.getCevaplar2b().split(";");
+        	String soru2c1 = acevaplar2[0];
+        	String soru2c2 = acevaplar2[1];
+        	String soru2c3 = acevaplar2[2];
+        	String soru2c4 = acevaplar2[3];
+        	
+        	String[] acevaplar3 = sc.getCevaplar3b().split(";");
+        	String soru3c1 = acevaplar3[0];
+        	String soru3c2 = acevaplar3[1];
+        	String soru3c3 = acevaplar3[2];
+        	String soru3c4 = acevaplar3[3];
+        	
+        	String[] acevaplar4 = sc.getCevaplar4b().split(";");
+        	String soru4c1 = acevaplar4[0];
+        	String soru4c2 = acevaplar4[1];
+        	String soru4c3 = acevaplar4[2];
+        	String soru4c4 = acevaplar4[3];
+        	
+        	String[] acevaplar5 = sc.getCevaplar5b().split(";");
+        	String soru5c1 = acevaplar5[0];
+        	String soru5c2 = acevaplar5[1];
+        	String soru5c3 = acevaplar5[2];
+        	String soru5c4 = acevaplar5[3];
+        	
+        	String[] acevaplar6 = sc.getCevaplar6b().split(";");
+        	String soru6c1 = acevaplar6[0];
+        	String soru6c2 = acevaplar6[1];
+        	String soru6c3 = acevaplar6[2];
+        	String soru6c4 = acevaplar6[3];
+        	
+        	String[] acevaplar7 = sc.getCevaplar7b().split(";");
+        	String soru7c1 = acevaplar7[0];
+        	String soru7c2 = acevaplar7[1];
+        	String soru7c3 = acevaplar7[2];
+        	String soru7c4 = acevaplar7[3];
+        	
+        	String[] acevaplar8 = sc.getCevaplar8b().split(";");
+        	String soru8c1 = acevaplar8[0];
+        	String soru8c2 = acevaplar8[1];
+        	String soru8c3 = acevaplar8[2];
+        	String soru8c4 = acevaplar8[3];
+        	
+        	String[] acevaplar9 = sc.getCevaplar9b().split(";");
+        	String soru9c1 = acevaplar9[0];
+        	String soru9c2 = acevaplar9[1];
+        	String soru9c3 = acevaplar9[2];
+        	String soru9c4 = acevaplar9[3];
+        	
+        	String[] acevaplar10 = sc.getCevaplar10b().split(";");
+        	String soru10c1 = acevaplar10[0];
+        	String soru10c2 = acevaplar10[1];
+        	String soru10c3 = acevaplar10[2];
+        	String soru10c4 = acevaplar10[3];
 			
 			request.setAttribute("anketadi", sc.getAnketadi());
 			request.setAttribute("soru1", sc.getSoru1());
-			request.setAttribute("cevap1", soru1c1);
-			request.setAttribute("cevap2", soru1c2);
-			request.setAttribute("cevap3", soru1c3);
-			request.setAttribute("cevap4", soru1c4);
+			request.setAttribute("cevap11", soru1c1);
+			request.setAttribute("cevap12", soru1c2);
+			request.setAttribute("cevap13", soru1c3);
+			request.setAttribute("cevap14", soru1c4);
+			
+			request.setAttribute("soru2", sc.getSoru2());
+			request.setAttribute("cevap21", soru2c1);
+			request.setAttribute("cevap22", soru2c2);
+			request.setAttribute("cevap23", soru2c3);
+			request.setAttribute("cevap24", soru2c4);
+			
+			request.setAttribute("soru3", sc.getSoru3());
+			request.setAttribute("cevap31", soru3c1);
+			request.setAttribute("cevap32", soru3c2);
+			request.setAttribute("cevap33", soru3c3);
+			request.setAttribute("cevap34", soru3c4);
+			
+			request.setAttribute("soru4", sc.getSoru4());
+			request.setAttribute("cevap41", soru4c1);
+			request.setAttribute("cevap42", soru4c2);
+			request.setAttribute("cevap43", soru4c3);
+			request.setAttribute("cevap44", soru4c4);
+			
+			request.setAttribute("soru5", sc.getSoru5());
+			request.setAttribute("cevap51", soru5c1);
+			request.setAttribute("cevap52", soru5c2);
+			request.setAttribute("cevap53", soru5c3);
+			request.setAttribute("cevap54", soru5c4);
+			
+			request.setAttribute("soru6", sc.getSoru6());
+			request.setAttribute("cevap61", soru6c1);
+			request.setAttribute("cevap62", soru6c2);
+			request.setAttribute("cevap63", soru6c3);
+			request.setAttribute("cevap64", soru6c4);
+			
+			request.setAttribute("soru7", sc.getSoru7());
+			request.setAttribute("cevap71", soru7c1);
+			request.setAttribute("cevap72", soru7c2);
+			request.setAttribute("cevap73", soru7c3);
+			request.setAttribute("cevap74", soru7c4);
+			
+			request.setAttribute("soru8", sc.getSoru8());
+			request.setAttribute("cevap81", soru8c1);
+			request.setAttribute("cevap82", soru8c2);
+			request.setAttribute("cevap83", soru8c3);
+			request.setAttribute("cevap84", soru8c4);
+			
+			request.setAttribute("soru9", sc.getSoru9());
+			request.setAttribute("cevap91", soru9c1);
+			request.setAttribute("cevap92", soru9c2);
+			request.setAttribute("cevap93", soru9c3);
+			request.setAttribute("cevap94", soru9c4);
+			
+			request.setAttribute("soru10", sc.getSoru10());
+			request.setAttribute("cevap101", soru10c1);
+			request.setAttribute("cevap102", soru10c2);
+			request.setAttribute("cevap103", soru10c3);
+			request.setAttribute("cevap104", soru10c4);
 			
 			request.getRequestDispatcher("anketYap.jsp").forward(request, response);
 		}

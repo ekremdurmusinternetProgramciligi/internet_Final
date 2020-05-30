@@ -40,13 +40,13 @@ public class LoginRegister extends HttpServlet {
 	 
 		
 		//System.out.println(c.getKadi() + c.getSifre() + c.getEposta());
-		if(submitType.equals("login") && c!=null && c.getKadi()!= null)// index sayfasýnda $message yerine yazý yazdýrýyor giriþ yaparsa if içinde çalýþmýyor !
+		if(submitType.equals("login") && c!=null && c.getKadi()!= null)
 		{
 			System.out.println("Giriþ Yapýldý");
-			request.setAttribute("message", c.getKadi());
-			request.getRequestDispatcher("anketler.jsp").forward(request, response);
+			request.setAttribute("message", c.getKadi()); 											
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
-		else if(submitType.equals("register")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		else if(submitType.equals("register")) 
 		{
 			c=new UYE();
 			c.setKadi(userName);

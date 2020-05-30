@@ -65,7 +65,7 @@ public class anketDAOImp implements anketDAO {
 	            ps.setString(11, a.getSoru5());ps.setString(12, a.getCevaplar5b());
 	            ps.setString(13, a.getSoru6());ps.setString(14, a.getCevaplar6b());
 	            ps.setString(15, a.getSoru7());ps.setString(16, a.getCevaplar7b());
-	            ps.setString(17, a.getSoru8());	ps.setString(18, a.getCevaplar8b());
+	            ps.setString(17, a.getSoru8());ps.setString(18, a.getCevaplar8b());
 	            ps.setString(19, a.getSoru9());ps.setString(20, a.getCevaplar9b());
 	            ps.setString(21, a.getSoru10());ps.setString(22, a.getCevaplar10b());
 	      
@@ -95,7 +95,7 @@ public class anketDAOImp implements anketDAO {
 		 
 	        try {
 	            con = connProvider.getCon();
-	            ps = con.prepareStatement("select anketAdi from kayitliAnketler");
+	            ps = con.prepareStatement("select anketid,anketAdi from kayitliAnketler");
 	         
 	            ResultSet rs = ps.executeQuery();
 	            
@@ -111,7 +111,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				an.setAnket1(rs.getString(1));
+    				an.setAnketID1(rs.getString(1));
+    				an.setAnket1(rs.getString(2));
     			}
 			
     			if(!rs.next())
@@ -120,7 +121,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				an.setAnket2(rs.getString(1));	
+    				an.setAnketID2(rs.getString(1));
+    				an.setAnket2(rs.getString(2));	
     			}
     			
     			if(!rs.next())
@@ -129,7 +131,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				an.setAnket3(rs.getString(1));
+    				an.setAnketID3(rs.getString(1));
+    				an.setAnket3(rs.getString(2));
     			}
     			
     			if(!rs.next())
@@ -138,7 +141,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				an.setAnket4(rs.getString(1));	
+    				an.setAnketID4(rs.getString(1));
+    				an.setAnket4(rs.getString(2));	
     			}
     			
     			if(!rs.next())
@@ -147,7 +151,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				an.setAnket5(rs.getString(1));
+    				an.setAnketID5(rs.getString(1));
+    				an.setAnket5(rs.getString(2));
     			}
     			
 	}
@@ -177,16 +182,43 @@ public class anketDAOImp implements anketDAO {
 	            ResultSet rs = ps.executeQuery();
       
 	            rs.next();
+	            	an.setAnketID1(rs.getString(1));
+	            	
 	            	an.setAnketadi(rs.getString(2));            
 	            	an.setSoru1(rs.getString(3));         
 	            	an.setCevaplar1b(rs.getString(4));
-	            	
-	            	
+	                   
+	            	an.setSoru2(rs.getString(5));         
+	            	an.setCevaplar2b(rs.getString(6)); 	
+	                  
+	            	an.setSoru3(rs.getString(7));         
+	            	an.setCevaplar3b(rs.getString(8));
+	                  
+	            	an.setSoru4(rs.getString(9));         
+	            	an.setCevaplar4b(rs.getString(10)); 	
+	                 
+	            	an.setSoru5(rs.getString(11));         
+	            	an.setCevaplar5b(rs.getString(12)); 	
+	                   
+	            	an.setSoru6(rs.getString(13));         
+	            	an.setCevaplar6b(rs.getString(14)); 	
+	                   
+	            	an.setSoru7(rs.getString(15));         
+	            	an.setCevaplar7b(rs.getString(16)); 	
+	                  
+	            	an.setSoru8(rs.getString(17));         
+	            	an.setCevaplar8b(rs.getString(18)); 	
+	                 
+	            	an.setSoru9(rs.getString(19));         
+	            	an.setCevaplar9b(rs.getString(20)); 	
+	                   
+	            	an.setSoru10(rs.getString(21));         
+	            	an.setCevaplar10b(rs.getString(22)); 	
 	            	
 	            System.out.println("anketDAOImp soruçekmedeyim");
     				
-	            System.out.println("anketDAOImp soruçektim :"+ an.getSoru1());
-	            System.out.println("anketDAOImp cevapçektim :"+ an.getCevaplar1b());
+	            System.out.println("anketDAOImp soruçektim :"+an.getAnketID()+ an.getSoru1()+an.getSoru2()+an.getSoru3()+an.getSoru4()+an.getSoru5()+an.getSoru6()+an.getSoru7()+an.getSoru8()+an.getSoru9()+an.getSoru10());
+	            System.out.println("anketDAOImp cevapçektim :"+ an.getCevaplar1b()+ an.getCevaplar2b()+ an.getCevaplar3b()+ an.getCevaplar4b()+ an.getCevaplar5b()+ an.getCevaplar6b()+ an.getCevaplar7b()+ an.getCevaplar8b()+ an.getCevaplar9b()+ an.getCevaplar10b());
 	           
 			
     			

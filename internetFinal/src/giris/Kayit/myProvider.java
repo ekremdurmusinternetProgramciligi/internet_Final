@@ -4,7 +4,7 @@ public interface myProvider {
 
 	String username=null;
 	String password=null;
-	String connURL="jdbc:sqlserver://DESKTOP-7KEUM1A\\;databaseName=anketSite;";
+	String connURL="jdbc:sqlserver://DESKTOP-PA6PTAP\\;databaseName=anketSite;"; //SQL de yazan server name girilecek.
 	
 	
 }

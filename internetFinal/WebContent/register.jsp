@@ -4,36 +4,60 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<script type="text/javascript" charset="charset=UTF-8">
+	<%@include file="./WEB-INF/js/Validations.js"%>
+</script>
+
 <title>Insert title here</title>
 </head>
-<body>
 
-<table bgcolor="#C5FFF0" border="3" width="100%" height="75px">
-      <tr>
-         <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
-         <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
-         <td width="25%">Anketler</td>
-         <td width="25%"><a href="anketolustur.jsp">Anket Oluştur</a></td>
-      </tr>     
-</table>
+<body bgcolor="#64ff56">
 
+<form action="loginRegister" method="post" >
 
-<form action="loginRegister" method="post">
-
-<table style="background-color: #EAEF8C;">
+<table style="background-color: yellow" border="1" width="800" height="500"align="center">
 <tr>
-	<td><h3 style="color:red;">Kullanıcı Kayıt Sayfası</h3></td>
-	<td></td>
+	<td colspan="2"><h1 style="color:red;"><u>Kullanıcı Kayıt Sayfası</u></h1></td>
+	
 </tr>
-<tr><td>Kullanıcı Adı:</td><td><input type="text" id="uname" name="username"></td></tr> 
-<tr><td>Şifre:</td><td><input type="password" id="upassword" name="password1"></td></tr>   
-<tr><td>Şifre Tekrarı:</td><td><input type="password" id="upassword2" name="password2"></td></tr>   
-<tr><td>E-Posta:</td><td><input type="text" id="uposta" name="uposta"></td></tr> 
+	<tr>
+			<td><font face="tahoma" size="10" color="black">Kullanıcı Adı:</font></td> 
+			<td>
+			<input type="text" id="uname" name="username" style="font-size: 28px"   >
+			</td>
+	</tr> 
+	<tr>
+		 	<td><font face="tahoma" size="10" color="black">Şifre:</font></td>
+			<td>
+			<input type="password" id="upassword" name="password1" style="font-size: 28px" >
+			</td>
+	</tr>   
+	<tr>
+			<td><font face="tahoma" size="10" color="black">Şifre Tekrarı:</font></td>
+			<td>
+			<input type="password" id="upassword2" name="password2" style="font-size: 28px"  >
+			</td>
+	</tr>   
+	<tr>
+			<td><font face="tahoma" size="10" color="black">E-Posta:</font></td>
+			<td>
+			<input type="text" id="eposta" name="uposta" style="font-size: 28px">
+			</td>
+	</tr> 
 <tr>
-	<td><button type="submit" name="submit" value="register">Kayıt Ol</button></td>
+
+	<td colspan="2">
+	<button type="button" name="button" id="kontrol" name="btn" style="visibility: visible;"  onclick="BosKontrol()">
+	Kayıt Ol</button>
+	
+	
+	<button type="submit" name="submit" id="submitbtn" value="register" style="visibility: hidden;" >
+	Giriş Yap</button></td>
 	
 	
 </tr>     
+
 
 </table>
 

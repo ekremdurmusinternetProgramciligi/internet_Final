@@ -50,9 +50,9 @@ public class uyeDAOImp implements uyeDAO {
             while(rs.next())
             {
                 System.out.println("try2deyim");
-                uy.setKadi(rs.getString(1));
-                uy.setSifre(rs.getString(2));
-                uy.setEposta(rs.getString(3));
+                uy.setKadi(rs.getString(2));
+                uy.setSifre(rs.getString(3));
+               // uy.setEposta(rs.getString(3));
             }
         }
         catch(Exception e) {

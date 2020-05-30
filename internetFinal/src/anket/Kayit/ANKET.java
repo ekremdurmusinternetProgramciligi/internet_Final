@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 public class ANKET {
 
 	private String anketID,userID;
+	private String anketID1,anketID2,anketID3,anketID4,anketID5;
+	
+
 	private String anketadi,anket1,anket2,anket3,anket4,anket5;
 	private String soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10;
 	
@@ -46,6 +49,45 @@ public class ANKET {
 		this.cevaplar9b = request.getParameter("cevap33") +";"+ request.getParameter("cevap34") +";"+ request.getParameter("cevap35") +";"+ request.getParameter("cevap36");
 		this.cevaplar10b = request.getParameter("cevap37") +";"+ request.getParameter("cevap38") +";"+ request.getParameter("cevap39") +";"+ request.getParameter("cevap40");
 		//this.cevaplar1b = request.getParameter("cevap11") +";"+ request.getParameter("cevap12");
+	}
+	public String getAnketID1() {
+		return anketID1;
+	}
+
+	public void setAnketID1(String anketID1) {
+		this.anketID1 = anketID1;
+	}
+
+	public String getAnketID2() {
+		return anketID2;
+	}
+
+	public void setAnketID2(String anketID2) {
+		this.anketID2 = anketID2;
+	}
+
+	public String getAnketID3() {
+		return anketID3;
+	}
+
+	public void setAnketID3(String anketID3) {
+		this.anketID3 = anketID3;
+	}
+
+	public String getAnketID4() {
+		return anketID4;
+	}
+
+	public void setAnketID4(String anketID4) {
+		this.anketID4 = anketID4;
+	}
+
+	public String getAnketID5() {
+		return anketID5;
+	}
+
+	public void setAnketID5(String anketID5) {
+		this.anketID5 = anketID5;
 	}
 	
 	public void setAnketadi(String anketadi) {

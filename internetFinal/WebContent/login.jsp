@@ -4,43 +4,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Anketçi</title>
+
+<script type="text/javascript" charset="charset=UTF-8">
+	<%@include file="./WEB-INF/js/Validations.js"%>
+</script>
+
+<title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="#ffff56">
 
 <form action="loginRegister"  method="post">
 
-<table bgcolor="#C5FFF0" border="3" width="100%" height="75px">
-      <tr>
-         <td width="25%"><a href="index.jsp">Giriş Yap</a></td>
-         <td width="25%"><a href="uyekayit.jsp">Kayıt Ol</a></td>
-         <td width="25%">Anketler</td>
-         <td width="25%"><a href="anketolustur.jsp">Anket Oluştur</a></td>
-      </tr>     
-</table>
-
-<table style="background-color: #EAEF8C;">
+<table style="background-color: lightgreen" border="1" width="800" height="500" align="center">
 	<tr>
-		<td><h3 style="color:red;">${message}</h3>
+		<td colspan="2"><h3 style="color:red;">${message}</h3>
 		<h3 style="color:green;">${successMessage}</h3>
 		</td>
-		<td></td>
+		
 	<tr>
-		<td><h3 style="color:red;">Giriş Sayfası</h3></td>
-		<td></td>
+		<td colspan="2"><h1 style="color:red;"><u>Giriş Sayfası</u></h1></td>
+		
 	</tr>
 	<tr>
-		<td>Kullanıcı Adı:</td>
-		<td><input type="text" id="uname" name="username"></td>
+		<td>
+		<font face="tahoma" size="10" color="black">Kullanıcı Adı:</font>
+		</td>
+		<td><input type="text" id="uname" name="username" onchange="BosKontrol('uname');" style="font-size: 28px" ></td>
 	</tr>      
 	<tr>
-		<td>Şifre:</td>
-		<td><input type="password" id="upassword" name="password1"></td>
+		<td>
+		<font face="tahoma" size="10" color="black" >Şifre:</font>
+		</td>
+		<td><input type="password" id="upassword" name="password1" onchange="BosKontrol('upassword');" style="font-size: 28px" ></td>
 	</tr>  
 	 
 	<tr>
-		<td><button type="submit" name="submit" value="login">Giriş Yap</td>
-		<td><a href="register.jsp">Kayıt Ol</a></td>
+		<td><button type="submit" name="submit" value="login" style="font-size: 40px" onclick="BosKontrol('upassword'),BosKontrol('uname')"> Giriş Yap</button></td>
+		<td colspan="2">
+		<a href="register.jsp"><button type="button" name="button" id="btn_kayit" value="btn" style="font-size: 40px" >Kayıt Ol</button></a></td>
 	</tr>     
 
 </table>

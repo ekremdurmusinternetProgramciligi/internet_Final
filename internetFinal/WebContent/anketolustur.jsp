@@ -4,6 +4,12 @@
 <html>
 <head>
 
+<link rel="stylesheet" href="still.css" type="text/css" media="all"/>
+
+<script type="text/javascript" charset="charset=UTF-8">
+	<%@include file="./WEB-INF/js/Validations.js"%>
+</script>
+
 <meta charset="UTF-8">
 <title>Anketçi</title>
 
@@ -11,14 +17,16 @@
 <body bgcolor="#E8EEE9">
 	<p id="yazdirma"></p>
 	
-<table bgcolor="#C5FFF0" border="3" width="100%" height="75px">
-      <tr>
-         <td width="25%"><a href="anketler.jsp">Anketler</a></td>
-         <td width="25%"><a href="anketolustur.jsp">Anket Oluştur</a></td>
-      </tr>     
-</table>
 
-<form method="post" action="anketYapKayit">
+	<ul>
+		<li><a href="index.jsp">Anasayfa</a></li>
+		<li><a href="anketler.jsp">Anketler</a></li>
+		<li><a href="anketolustur.jsp">Anket Oluştur</a></li>
+		<li><a href="hakkinda.jsp">Hakkında</a></li>
+		<li><a href="profil.jsp">Profil</a></li>
+	</ul>
+
+<form name="anketform" method="post" action="anketYapKayit" onsubmit="return anketkontrol()" >
 
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C" align="center">
       <tr>
