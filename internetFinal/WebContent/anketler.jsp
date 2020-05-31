@@ -14,11 +14,11 @@
 <title>Anketçi</title>
 
 <script>
-	function anketGiris(AnketID){
+	function anketGiris(){
 		
 		width = window.screen.width * 0.5;
 		height = window.screen.height * 0.5;
-		url="http://localhost:8080/internetFinal/anketYap.jsp?AnketID="+AnketID;
+		url="http://localhost:8080/internetFinal/anketYap.jsp";
 		mywindow = window.open(url, "Anket", "resizable=yes","location=0 , status=1 , scrollbars=1 , "+
 				"menubar=0 , toolbar=no");
 		mywindow.moveTo(width * 0.5, height * 0.5);
@@ -47,13 +47,19 @@
 
 <form method="post" action="anketYapKayit">
 
-<input type="submit" name="submit" value="AnketleriListele">
+
+
 
 <table border="1" width="300px" height="200px" align="center" bgcolor="#EAEF8C" align="center">
+      <input type="text" name="anketid" value="Seçmek istediğiniz anketin numarasını girin"></input>
+      
+      <tr>
+         <td><input type="submit" name="submit" value="AnketleriListele"></td>
+         
+      </tr>
       <tr>
          <td>Anket1 burası:</td>
-         <td onclick="anketGiris('1')">${anket1}${AnketID1}</td>
-         
+         <td onclick="anketGiris()">${anket1}</td>
       </tr> 
       <tr>
          <td>Anket2 burası:</td>
@@ -75,8 +81,14 @@
          <td>${anket5}</td>
          
          
-      </tr>       
-           
+      </tr>     
+      <tr>       
+   
+         <td><input type="submit" name="submit" value="Anketi Baslat"> </td>
+         
+         
+      </tr>    
+          
 </table>
 </form>
 

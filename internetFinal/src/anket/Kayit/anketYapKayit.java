@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import giris.Kayit.UYE;
+
 
 /**
  * Servlet implementation class anketYapKayit
@@ -32,7 +34,7 @@ public class anketYapKayit extends HttpServlet {
 anketDAO cd = new anketDAOImp();
 		
 		String anketAdi = request.getParameter("anketadi");
-		String anketID = request.getParameter("anketID");
+		String anketID = request.getParameter("anketid");
 		
 		String anket1 = request.getParameter("anket1");
 		String anket2 = request.getParameter("anket2");
@@ -80,27 +82,27 @@ anketDAO cd = new anketDAOImp();
 				cevaplar8b,cevaplar9b,cevaplar10b);
 		
 		ANKET sc = new ANKET();
-		sc = cd.getAnketSC(anketAdi,anket1,anket2,anket3,anket4,anket5,soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10,
+		sc = cd.getAnketSC(anketID,anketAdi,anket1,anket2,anket3,anket4,anket5,soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10,
 				cevaplar1b,cevaplar2b,cevaplar3b,cevaplar4b,cevaplar5b,cevaplar6b,cevaplar7b,
 				cevaplar8b,cevaplar9b,cevaplar10b);
 		
+		
 	 
 		System.out.println("servlet submit deðeri>>"+submitType);
-		//System.out.println("anketservlet>>"+anketAdi+soru1+cevaplar1b);
-		//System.out.println(c.getKadi() + c.getSifre() + c.getEposta());
-		if(submitType.equals("AnketleriListele"))//   && c!=null && c.getAnketadi()!= null
+		
+		if(submitType.equals("AnketleriListele"))//kayýtlý anketlerin listelenmesi
 		{
 			System.out.println("Anket Sayfasý Yenilendi !");
-			System.out.println("anket servlet anket adi"+c.getAnketadi());
+			
 			request.setAttribute("anket1", c.getAnket1());
 			request.setAttribute("anket2", c.getAnket2());
 			request.setAttribute("anket3", c.getAnket3());
 			request.setAttribute("anket4", c.getAnket4());
 			request.setAttribute("anket5", c.getAnket5());
-			request.setAttribute("AnketID1", c.getAnketID1());
 			request.getRequestDispatcher("anketler.jsp").forward(request, response);
 		}
-		else if(submitType.equals("anketKayit")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		
+		else if(submitType.equals("anketKayit")) //kullanýcýnýn oluþturduðu anket submit koþuluna göre yeni anket olarak kaydediliyor
 		{
 			c=new ANKET();
 			c.setAnketadi(anketAdi);
@@ -115,11 +117,10 @@ anketDAO cd = new anketDAOImp();
 			
 			cd.insertANKET(c);
 			System.out.println("Anket Kayýt baþarýlý");
-		/*	request.setAttribute("message", "Üyelik Tamamlandý, Giriþ Yapabilirsiniz");
-			request.getRequestDispatcher("login.jsp").forward(request, response);*/
+		
 		}
 		
-		else if(submitType.equals("Anketi Baslat")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		else if(submitType.equals("Anketi Baslat")) //seçilen anketin gerekli yerlere set edilmesi
 		{
 		
 			System.out.println("Anket Sayfasý Yenilendi !");
@@ -245,33 +246,26 @@ anketDAO cd = new anketDAOImp();
 			request.setAttribute("cevap102", soru10c2);
 			request.setAttribute("cevap103", soru10c3);
 			request.setAttribute("cevap104", soru10c4);
+			request.setAttribute("anketid", anketID);
 			
 			request.getRequestDispatcher("anketYap.jsp").forward(request, response);
 		}
 		
-		else if(submitType.equals("Anketi Bitir")) //uyekayit sayfasýnda buttona verilen valueye göre çalýþýyor if içinde çalýþmýyor !
+		else if(submitType.equals("Anketi Bitir")) 
 		{
 			c=new ANKET();
-			c.setAnketadi(anketAdi);
-			c.setSoru1(soru1);c.setSoru2(soru2);c.setSoru3(soru3);c.setSoru4(soru4);
-			c.setSoru5(soru5);c.setSoru6(soru6);c.setSoru7(soru7);c.setSoru8(soru8);
-			c.setSoru9(soru9);c.setSoru10(soru10);
+			c.setAnketID(anketID);
+
 			
 			c.setCevaplar1b(cevaplar1b);c.setCevaplar2b(cevaplar2b);c.setCevaplar3b(cevaplar3b);
 			c.setCevaplar4b(cevaplar4b);c.setCevaplar5b(cevaplar5b);c.setCevaplar6b(cevaplar6b);
 			c.setCevaplar7b(cevaplar7b);c.setCevaplar8b(cevaplar8b);c.setCevaplar9b(cevaplar9b);
 			c.setCevaplar10b(cevaplar10b);
 			
-			cd.insertANKET(c);
+			cd.kinsertANKET(c);
 			System.out.println("Anket Kayýt baþarýlý");
-		/*	request.setAttribute("message", "Üyelik Tamamlandý, Giriþ Yapabilirsiniz");
-			request.getRequestDispatcher("login.jsp").forward(request, response);*/
+		
 		}
-		else
-		{
-			request.setAttribute("message", "Kullanýcý bulunamadý, üye olun.");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		} 
 	}
 
 }

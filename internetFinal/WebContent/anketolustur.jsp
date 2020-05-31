@@ -26,7 +26,7 @@
 		<li><a href="profil.jsp">Profil</a></li>
 	</ul>
 
-<form name="anketform" method="post" action="anketYapKayit" onsubmit="return anketkontrol()" >
+<form name="anketform" method="post" action="anketYapKayit" onsubmit="return anketkontrol()" accept-charset="UTF-8" >
 
 <table border="0" width="300px" height="200px" align="left" bgcolor="#EAEF8C" align="center">
       <tr>

@@ -5,9 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 
-<%
-		String AnketID=(String)request.getParameter("AnketID");
-	%>
 
 <title>Anketçi</title>
 
@@ -18,13 +15,14 @@
 
 <form method="post" action="anketYapKayit">
 
-<input type="submit" name="submit" value="Anketi Baslat" onclick="anketGiris('2')">
+
 
 <table border="1" >
 
 
 	  <tr>
-         <td>Anket adi gir:${AnketID1}${anketadi}</td>
+         <td>Anket adi gir:${anketadi}</td>
+         <input type="text" name="anketid" value="${anketid}">
       </tr> 
       <tr>
          <td>${soru1}:</td>
@@ -32,15 +30,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap11}</td>  
+         <td><input type="text" name="cevap1" value="${cevap11}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap12}</td>        
+         <td><input type="text" name="cevap2" value="${cevap12}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap13}</td>
+         <td><input type="text" name="cevap3" value="${cevap13}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap14}</td>        
+         <td><input type="text" name="cevap4" value="${cevap14}"></td>        
       </tr>   
 	   
       <!-- ************************************************************ -->
@@ -50,15 +48,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap21}</td>  
+         <td><input type="text" name="cevap5" value="${cevap21}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap22}</td>        
+         <td><input type="text" name="cevap6" value="${cevap22}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap23}</td>
+         <td><input type="text" name="cevap7" value="${cevap23}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap24}</td>        
+         <td><input type="text" name="cevap8" value="${cevap24}"></td>        
       </tr>   
 	    
 		<!-- ************************************************************ -->
@@ -68,15 +66,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap31}</td>  
+         <td><input type="text" name="cevap9" value="${cevap31}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap32}</td>        
+         <td><input type="text" name="cevap10" value="${cevap32}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap33}</td>
+         <td><input type="text" name="cevap11" value="${cevap33}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap34}</td>        
+         <td><input type="text" name="cevap12" value="${cevap34}"></td>        
       </tr>   
 	  
 		<!-- ************************************************************ -->
@@ -86,15 +84,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap41}</td>  
+         <td><input type="text" name="cevap13" value="${cevap41}"></input></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap42}</td>        
+         <td><input type="text" name="cevap14" value="${cevap42}"></input></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap43}</td>
+         <td><input type="text" name="cevap15" value="${cevap43}"></input></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap44}</td>        
+         <td><input type="text" name="cevap16" value="${cevap44}"></input></td>        
       </tr>   
 	     
 		<!-- ************************************************************ -->
@@ -104,15 +102,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap51}</td>  
+         <td><input type="text" name="cevap17" value="${cevap51}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap52}</td>        
+         <td><input type="text" name="cevap18" value="${cevap52}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap53}</td>
+         <td><input type="text" name="cevap19" value="${cevap53}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap54}</td>        
+         <td><input type="text" name="cevap20" value="${cevap54}"></td>        
       </tr>   
 	   
 		<!-- ************************************************************ -->
@@ -122,15 +120,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap61}</td>  
+         <td><input type="text" name="cevap21" value="${cevap61}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap62}</td>        
+         <td><input type="text" name="cevap22" value="${cevap62}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap63}</td>
+         <td><input type="text" name="cevap23" value="${cevap63}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap64}</td>        
+         <td><input type="text" name="cevap24" value="${cevap64}"></td>        
       </tr>   
 	  
 		<!-- ************************************************************ -->
@@ -140,15 +138,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap71}</td>  
+         <td><input type="text" name="cevap25" value="${cevap71}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap72}</td>        
+         <td><input type="text" name="cevap26" value="${cevap72}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap73}</td>
+         <td><input type="text" name="cevap27" value="${cevap73}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap74}</td>        
+         <td><input type="text" name="cevap28" value="${cevap74}"></td>        
       </tr>   
 	   
 		<!-- ************************************************************ -->
@@ -158,15 +156,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap81}</td>  
+         <td><input type="text" name="cevap29" value="${cevap81}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap82}</td>        
+         <td><input type="text" name="cevap30" value="${cevap82}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap83}</td>
+         <td><input type="text" name="cevap31" value="${cevap83}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap84}</td>        
+         <td><input type="text" name="cevap32" value="${cevap84}"></td>        
       </tr>   
 	   
 		<!-- ************************************************************ -->
@@ -176,15 +174,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap91}</td>  
+         <td><input type="text" name="cevap33" value="${cevap91}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap92}</td>        
+         <td><input type="text" name="cevap34" value="${cevap92}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap93}</td>
+         <td><input type="text" name="cevap35" value="${cevap93}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap94}</td>        
+         <td><input type="text" name="cevap36" value="${cevap94}"></td>        
       </tr>   
 	    
 		<!-- ************************************************************ -->
@@ -194,15 +192,15 @@
       </tr>      
       <tr>        
          
-         <td><input type="radio" name="cevap1"></input>${cevap101}</td>  
+         <td><input type="text" name="cevap37" value="${cevap101}"></td>  
          
-         <td><input type="radio" name="cevap2"></input>${cevap102}</td>        
+         <td><input type="text" name="cevap38" value="${cevap102}"></td>        
       </tr>       
       <tr>         
          
-         <td><input type="radio" name="cevap3"></input>${cevap103}</td>
+         <td><input type="text" name="cevap39" value="${cevap103}"></td>
          
-         <td><input type="radio" name="cevap4"></input>${cevap104}</td>        
+         <td><input type="text" name="cevap40" value="${cevap104}"></td>        
       </tr>   
 	  <tr>       
          <td><input type="submit" name="submit" value="Anketi Bitir"></td>

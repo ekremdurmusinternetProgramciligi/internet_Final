@@ -16,8 +16,8 @@ public class anketDAOImp implements anketDAO {
 	public int insertANKET(ANKET a) {
 		  int durum=0;
 		  
-		  
-		  //,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+		  //kullanýcý anket oluþturduðunda veritabanýna buradan kaydediliyor
+		 
 	        try {
 	            con=connProvider.getCon();
 	            ps=con.prepareStatement("insert into kayitliAnketler (anketAdi,soru1,cevaplar1,soru2,cevaplar2,soru3,cevaplar3,soru4,cevaplar4,soru5,cevaplar5,soru6,cevaplar6,soru7,cevaplar7,soru8,cevaplar8,soru9,cevaplar9,soru10,cevaplar10) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -52,22 +52,22 @@ public class anketDAOImp implements anketDAO {
 		  int durum=0;
 		  
 		  
-		  //,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
+		//kullanýcýnýn doldurduðu anketin cevaplarýný ve anketin idsini veritabanýna kaydediyor
 	        try {
 	            con=connProvider.getCon();
-	            ps=con.prepareStatement("insert into cevapliAnketler (anketID,userID,soru1,kcevap1,soru2,kcevap2,soru3,kcevap3,soru4,kcevap4,soru5,kcevap5,soru6,kcevap6,soru7,kcevap7,soru8,kcevap8,soru9,kcevap9,soru10,kcevap10) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	            ps=con.prepareStatement("insert into cevapliAnketler (anketID,kcevap1,kcevap2,kcevap3,kcevap4,kcevap5,kcevap6,kcevap7,kcevap8,kcevap9,kcevap10) values(?,?,?,?,?,?,?,?,?,?,?)");
 	            ps.setString(1, a.getAnketID());
-	            ps.setString(2, a.getUserID());
-	            ps.setString(3, a.getSoru1());ps.setString(4, a.getCevaplar1b());
-	            ps.setString(5, a.getSoru2());ps.setString(6, a.getCevaplar2b());
-	            ps.setString(7, a.getSoru3());ps.setString(8, a.getCevaplar3b());
-	            ps.setString(9, a.getSoru4());ps.setString(10, a.getCevaplar4b());
-	            ps.setString(11, a.getSoru5());ps.setString(12, a.getCevaplar5b());
-	            ps.setString(13, a.getSoru6());ps.setString(14, a.getCevaplar6b());
-	            ps.setString(15, a.getSoru7());ps.setString(16, a.getCevaplar7b());
-	            ps.setString(17, a.getSoru8());ps.setString(18, a.getCevaplar8b());
-	            ps.setString(19, a.getSoru9());ps.setString(20, a.getCevaplar9b());
-	            ps.setString(21, a.getSoru10());ps.setString(22, a.getCevaplar10b());
+	           // ps.setString(2, a.getUserID());
+	            ps.setString(2, a.getCevaplar1b());
+	            ps.setString(3, a.getCevaplar2b());
+	            ps.setString(4, a.getCevaplar3b());
+	            ps.setString(5, a.getCevaplar4b());
+	            ps.setString(6, a.getCevaplar5b());
+	            ps.setString(7, a.getCevaplar6b());
+	            ps.setString(8, a.getCevaplar7b());
+	            ps.setString(9, a.getCevaplar8b());
+	            ps.setString(10, a.getCevaplar9b());
+	            ps.setString(11, a.getCevaplar10b());
 	      
 	            
 	            durum = ps.executeUpdate();
@@ -89,70 +89,65 @@ public class anketDAOImp implements anketDAO {
 			String cevaplar1b,String cevaplar2b,String cevaplar3b,String cevaplar4b,String cevaplar5b,
 			String cevaplar6b,String cevaplar7b,String cevaplar8b,String cevaplar9b,String cevaplar10b) {
 		
-		 ANKET an = new ANKET();
+		 ANKET c = new ANKET();
 
-		 //SELECT *	FROM products WHERE category_id IS NOT NULL;
+		 //kullanýcýnýn yapcaðý anketi seçmesi için kayýtlý anketlerin adýný getiriyor
 		 
 	        try {
 	            con = connProvider.getCon();
-	            ps = con.prepareStatement("select anketid,anketAdi from kayitliAnketler");
+	            ps = con.prepareStatement("select anketAdi from kayitliAnketler");
 	         
 	            ResultSet rs = ps.executeQuery();
 	            
 	          
-	            System.out.println("anketDAOImp:"+ an.getAnket1());
+	            System.out.println("anketDAOImp:"+ c.getAnket1());
 	            System.out.println("getAnket try1deyim");
 	            System.out.println("anketDAOImp:"+ anket1);
 	           
 	            
 	            if(!rs.next())
     			{
-        			an.setAnket1("Boþ anket");
+        			c.setAnket1("Boþ anket");
     			}
     			else
-    			{
-    				an.setAnketID1(rs.getString(1));
-    				an.setAnket1(rs.getString(2));
+    			{			
+    				c.setAnket1(rs.getString(1));
     			}
 			
     			if(!rs.next())
     			{
-        			an.setAnket2("Boþ anket");
+        			c.setAnket2("Boþ anket");
     			}
     			else
     			{
-    				an.setAnketID2(rs.getString(1));
-    				an.setAnket2(rs.getString(2));	
+    				c.setAnket2(rs.getString(1));	
     			}
     			
     			if(!rs.next())
     			{
-        			an.setAnket3("Boþ anket");
+        			c.setAnket3("Boþ anket");
     			}
     			else
     			{
-    				an.setAnketID3(rs.getString(1));
-    				an.setAnket3(rs.getString(2));
+    				c.setAnket3(rs.getString(1));
     			}
     			
     			if(!rs.next())
     			{
-        			an.setAnket4("Boþ anket");
+        			c.setAnket4("Boþ anket");
     			}
     			else
     			{
-    				an.setAnketID4(rs.getString(1));
-    				an.setAnket4(rs.getString(2));	
+    				c.setAnket4(rs.getString(1));	
     			}
     			
     			if(!rs.next())
     			{
-        			an.setAnket5("Boþ anket");
+        			c.setAnket5("Boþ anket");
     			}
     			else
     			{
-    				an.setAnketID5(rs.getString(1));
-    				an.setAnket5(rs.getString(2));
+    				c.setAnket5(rs.getString(1));
     			}
     			
 	}
@@ -160,29 +155,31 @@ public class anketDAOImp implements anketDAO {
 	            System.out.println(e);
 	        }
 
-	        return an;
+	        return c;
 	        
 	}
 	
 	@Override
-	public ANKET getAnketSC(String anketAdi,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
+	public ANKET getAnketSC(String anketID,String anketAdi,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
 			String soru5,String soru6,String soru7,String soru8,String soru9,String soru10,
 			String cevaplar1b,String cevaplar2b,String cevaplar3b,String cevaplar4b,String cevaplar5b,
 			String cevaplar6b,String cevaplar7b,String cevaplar8b,String cevaplar9b,String cevaplar10b) {
 		
 		 ANKET an = new ANKET();
 
-		 //SELECT *	FROM products WHERE category_id IS NOT NULL;
+		 //kullanýcýnýn seçtiði anket numarasýna göre veritabanýndan 
+		 ////anket seçiyor ve gerekli yerlere atýyor
 		 
 		 
 	        try {
 	            con = connProvider.getCon();
-	            ps = con.prepareStatement("select * from kayitliAnketler");
-	         
+	            ps = con.prepareStatement("select * from kayitliAnketler where anketid=?");
+	            ps.setString(1, anketID);
 	            ResultSet rs = ps.executeQuery();
-      
+	            System.out.println("Veritabaný koduna gelen id deðeri: "+anketID);
+	            
 	            rs.next();
-	            	an.setAnketID1(rs.getString(1));
+	            	
 	            	
 	            	an.setAnketadi(rs.getString(2));            
 	            	an.setSoru1(rs.getString(3));         
@@ -217,7 +214,7 @@ public class anketDAOImp implements anketDAO {
 	            	
 	            System.out.println("anketDAOImp soruçekmedeyim");
     				
-	            System.out.println("anketDAOImp soruçektim :"+an.getAnketID()+ an.getSoru1()+an.getSoru2()+an.getSoru3()+an.getSoru4()+an.getSoru5()+an.getSoru6()+an.getSoru7()+an.getSoru8()+an.getSoru9()+an.getSoru10());
+	            System.out.println("anketDAOImp soruçektim :"+ an.getSoru1()+an.getSoru2()+an.getSoru3()+an.getSoru4()+an.getSoru5()+an.getSoru6()+an.getSoru7()+an.getSoru8()+an.getSoru9()+an.getSoru10());
 	            System.out.println("anketDAOImp cevapçektim :"+ an.getCevaplar1b()+ an.getCevaplar2b()+ an.getCevaplar3b()+ an.getCevaplar4b()+ an.getCevaplar5b()+ an.getCevaplar6b()+ an.getCevaplar7b()+ an.getCevaplar8b()+ an.getCevaplar9b()+ an.getCevaplar10b());
 	           
 			
@@ -225,7 +222,7 @@ public class anketDAOImp implements anketDAO {
     	
 	}
 	        catch(Exception e) {
-	            System.out.println(e);
+	            System.out.println("hatamýz burada: "+e);
 	        }
 
 	        return an;

@@ -29,6 +29,7 @@ public class ANKET {
 		this.setAnket4(request.getParameter("anket4"));
 		this.setAnket5(request.getParameter("anket5"));
 		
+		this.setAnketID(anketID);
 		this.setUserID(request.getParameter("userID"));
 		
 		this.anketadi = request.getParameter("anketadi");
@@ -50,6 +51,14 @@ public class ANKET {
 		this.cevaplar10b = request.getParameter("cevap37") +";"+ request.getParameter("cevap38") +";"+ request.getParameter("cevap39") +";"+ request.getParameter("cevap40");
 		//this.cevaplar1b = request.getParameter("cevap11") +";"+ request.getParameter("cevap12");
 	}
+	public String getAnketID() {
+		return anketID;
+	}
+
+	public void setAnketID(String anketID) {
+		this.anketID = anketID;
+	}
+	
 	public String getAnketID1() {
 		return anketID1;
 	}
@@ -296,14 +305,6 @@ public class ANKET {
 
 	public void setAnket4(String anket4) {
 		this.anket4 = anket4;
-	}
-
-	public String getAnketID() {
-		return anketID;
-	}
-
-	public void setAnketID(String anketID) {
-		this.anketID = anketID;
 	}
 
 	public String getUserID() {
