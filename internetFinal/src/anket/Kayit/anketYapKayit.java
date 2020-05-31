@@ -13,7 +13,7 @@ import giris.Kayit.UYE;
 /**
  * Servlet implementation class anketYapKayit
  */
-@WebServlet(name = "anketYapKayit", urlPatterns = { "/anketYapKayit" })
+@WebServlet(name = "anketYapKayit", urlPatterns = { "/anketYapKayit"})
 //@WebServlet("/anketYapKayit")
 public class anketYapKayit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,6 +35,12 @@ anketDAO cd = new anketDAOImp();
 		
 		String anketAdi = request.getParameter("anketadi");
 		String anketID = request.getParameter("anketid");
+		
+		String AnketID1 = request.getParameter("anketid1");
+		String AnketID2 = request.getParameter("anketid2");
+		String AnketID3 = request.getParameter("anketid3");
+		String AnketID4 = request.getParameter("anketid4");
+		String AnketID5 = request.getParameter("anketid5");
 		
 		String anket1 = request.getParameter("anket1");
 		String anket2 = request.getParameter("anket2");
@@ -77,7 +83,7 @@ anketDAO cd = new anketDAOImp();
 		String submitType = request.getParameter("submit");
 		
 		ANKET c = new ANKET();
-		c = cd.getAnket(anketAdi,anket1,anket2,anket3,anket4,anket5,soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10,
+		c = cd.getAnket(anketAdi,AnketID1,AnketID2,AnketID3,AnketID4,AnketID5,anket1,anket2,anket3,anket4,anket5,soru1,soru2,soru3,soru4,soru5,soru6,soru7,soru8,soru9,soru10,
 				cevaplar1b,cevaplar2b,cevaplar3b,cevaplar4b,cevaplar5b,cevaplar6b,cevaplar7b,
 				cevaplar8b,cevaplar9b,cevaplar10b);
 		
@@ -99,6 +105,11 @@ anketDAO cd = new anketDAOImp();
 			request.setAttribute("anket3", c.getAnket3());
 			request.setAttribute("anket4", c.getAnket4());
 			request.setAttribute("anket5", c.getAnket5());
+			request.setAttribute("anketid1", c.getAnketID1());
+			request.setAttribute("anketid2", c.getAnketID2());
+			request.setAttribute("anketid3", c.getAnketID3());
+			request.setAttribute("anketid4", c.getAnketID4());
+			request.setAttribute("anketid5", c.getAnketID5());
 			request.getRequestDispatcher("anketler.jsp").forward(request, response);
 		}
 		
@@ -117,7 +128,7 @@ anketDAO cd = new anketDAOImp();
 			
 			cd.insertANKET(c);
 			System.out.println("Anket Kayýt baþarýlý");
-		
+			request.getRequestDispatcher("anketler.jsp").forward(request, response);
 		}
 		
 		else if(submitType.equals("Anketi Baslat")) //seçilen anketin gerekli yerlere set edilmesi

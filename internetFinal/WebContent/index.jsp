@@ -21,7 +21,7 @@
 		<li><a href="anketler.jsp">Anketler</a></li>
 		<li><a href="anketolustur.jsp">Anket Oluştur</a></li>
 		<li><a href="hakkinda.jsp">Hakkında</a></li>
-		<li><a href="profil.jsp">Profil</a></li>
+		
 	</ul>
 
 <form method="post" action="loginRegister">

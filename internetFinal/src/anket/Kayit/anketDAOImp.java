@@ -84,7 +84,7 @@ public class anketDAOImp implements anketDAO {
 	}
 
 	@Override
-	public ANKET getAnket(String anketAdi,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
+	public ANKET getAnket(String anketAdi, String AnketID1, String AnketID2, String AnketID3, String AnketID4, String AnketID5,String anket1,String anket2,String anket3,String anket4,String anket5, String soru1,String soru2,String soru3,String soru4,
 			String soru5,String soru6,String soru7,String soru8,String soru9,String soru10,
 			String cevaplar1b,String cevaplar2b,String cevaplar3b,String cevaplar4b,String cevaplar5b,
 			String cevaplar6b,String cevaplar7b,String cevaplar8b,String cevaplar9b,String cevaplar10b) {
@@ -95,7 +95,7 @@ public class anketDAOImp implements anketDAO {
 		 
 	        try {
 	            con = connProvider.getCon();
-	            ps = con.prepareStatement("select anketAdi from kayitliAnketler");
+	            ps = con.prepareStatement("select anketid,anketAdi from kayitliAnketler");
 	         
 	            ResultSet rs = ps.executeQuery();
 	            
@@ -110,8 +110,9 @@ public class anketDAOImp implements anketDAO {
         			c.setAnket1("Boþ anket");
     			}
     			else
-    			{			
-    				c.setAnket1(rs.getString(1));
+    			{	
+    				c.setAnketID1(rs.getString(1));
+    				c.setAnket1(rs.getString(2));
     			}
 			
     			if(!rs.next())
@@ -120,7 +121,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				c.setAnket2(rs.getString(1));	
+    				c.setAnketID2(rs.getString(1));
+    				c.setAnket2(rs.getString(2));
     			}
     			
     			if(!rs.next())
@@ -129,7 +131,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				c.setAnket3(rs.getString(1));
+    				c.setAnketID3(rs.getString(1));
+    				c.setAnket3(rs.getString(2));
     			}
     			
     			if(!rs.next())
@@ -138,7 +141,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				c.setAnket4(rs.getString(1));	
+    				c.setAnketID4(rs.getString(1));
+    				c.setAnket4(rs.getString(2));	
     			}
     			
     			if(!rs.next())
@@ -147,7 +151,8 @@ public class anketDAOImp implements anketDAO {
     			}
     			else
     			{
-    				c.setAnket5(rs.getString(1));
+    				c.setAnketID5(rs.getString(1));
+    				c.setAnket5(rs.getString(2));
     			}
     			
 	}
@@ -175,6 +180,9 @@ public class anketDAOImp implements anketDAO {
 	            con = connProvider.getCon();
 	            ps = con.prepareStatement("select * from kayitliAnketler where anketid=?");
 	            ps.setString(1, anketID);
+	           
+	            
+	           
 	            ResultSet rs = ps.executeQuery();
 	            System.out.println("Veritabaný koduna gelen id deðeri: "+anketID);
 	            
